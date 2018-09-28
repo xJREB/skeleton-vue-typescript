@@ -1,9 +1,6 @@
 // External
-const fs = require("fs");
 const path = require("path");
-const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
-const TSLintPlugin = require("tslint-webpack-plugin");
 
 // Internal
 const commonConfig = require("./webpack.base.config");

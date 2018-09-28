@@ -1,7 +1,6 @@
 // External
-const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
-const FileChanger = require("webpack-file-changer")
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const path = require("path");
 
 // Internal
@@ -14,16 +13,8 @@ module.exports = webpackMerge(commonConfig, {
         filename: "bundle.[hash].js"
     },
     optimization: {
+        concatenateModules: true,
         minimize: true
     },
-    plugins: [
-        new FileChanger({
-            change: [{
-                file: "target/index.html",
-                parameters: {
-                    "bundle\\.js": "bundle.[hash].js",
-                }
-            }]
-        })
-    ]
+    plugins: [new CleanWebpackPlugin(["target"])]
 });

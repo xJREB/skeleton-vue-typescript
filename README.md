@@ -29,6 +29,9 @@ npm run lint
 
 # run tests and create coverage reports
 npm test
+
+# run SonarQube analysis (configure sonar-project.properties first or pass parameters to choose the SonarQube instance)
+npm run sonar
 ```
 
 ## Useful VSCode Extensions
