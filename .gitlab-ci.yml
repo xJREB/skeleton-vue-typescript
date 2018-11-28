@@ -1,0 +1,23 @@
+image: node:10
+
+cache:
+    paths:
+        - node_modules/
+
+build:
+    stage: build
+    script:
+        - npm install --progress=false
+        - npm run build
+
+test:
+    stage: test
+    script:
+        - npm test
+
+sonarqube:
+    stage: test
+    script:
+        - PACKAGE_VERSION=$(node -p "require('./package.json').version")
+        - echo sonar.projectVersion=${PACKAGE_VERSION} >> sonar-project.properties
+        - npm run sonar -- -Dsonar.login=${SONAR_TOKEN} -Dsonar.host.url=${SONAR_URL}
