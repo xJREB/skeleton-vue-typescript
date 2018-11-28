@@ -1,9 +1,8 @@
 {
     "name": "skeleton-vue-typescript",
     "description": "A web frontend skeleton project with Vue.js, TypeScript, Bootstrap, Less, Webpack, and Jest.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "license": "Apache-2.0",
-    "private": true,
     "author": "Justus Bogner <jreb1990@gmail.com>",
     "scripts": {
         "build": "webpack --config webpack.prod.config.js --progress",
