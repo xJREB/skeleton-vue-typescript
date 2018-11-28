@@ -8,9 +8,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const rawBuildDate = new Date();
 // Build datestring
 // Regex for extracting the timezone from http://stackoverflow.com/a/15304657
-const buildDate = `${moment(rawBuildDate).format("YYYY-MM-DD HH:mm")} ${
-    rawBuildDate.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]
-}`;
+const buildDate = `${moment(rawBuildDate).format("YYYY-MM-DD HH:mm")} ${rawBuildDate.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]}`;
 
 module.exports = {
     context: path.resolve(__dirname, "src"),
@@ -78,7 +76,8 @@ module.exports = {
             },
             // String replacement
             {
-                test: /(config\.ts)$/,
+                test: /\.ts$/,
+                include: [path.resolve(__dirname, "src/config")],
                 enforce: "pre",
                 loader: "string-replace-loader",
                 query: {

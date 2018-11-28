@@ -6,10 +6,10 @@
 
 - `src/app.ts`: main file of the app that loads and configures all dependencies and kickstarts the parent Vue component
 - `src/routes.ts`: configuration of routes (`route`: binding a `component` to a certain `path`)
+- `src/App.vue`: basic app skeleton with header/nav, body, and footer
 - `src/common/`: directory for shared functionality that is not specific to a certain Vue or domain concept
-- `src/components/`: directory for all Vues; should be structured according to domain concepts
-- `src/components/App.vue`: basic app skeleton with header/nav, body, and footer
-- `src/conf/config.ts`: configuration file with app or environment specific properties
+- `src/views/`: directory for all Vues; should be structured according to domain concepts
+- `src/config/index.ts`: configuration file with app or environment specific properties
 - `test/`: directory for all tests
 
 ## Build Setup

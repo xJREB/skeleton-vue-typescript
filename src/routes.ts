@@ -1,5 +1,5 @@
-import MainView from "./components/Main.vue";
-import TestView from "./components/Test.vue";
+import MainView from "./views/Main.vue";
+import TestView from "./views/Test.vue";
 
 export default [
     {

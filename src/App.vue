@@ -3,7 +3,7 @@
         <header class="header">
             <b-navbar class="bg-primary" toggleable="md" fixed="top" variant="faded" type="dark">
                 <b-navbar-toggle target="nav_collapse" position="left"></b-navbar-toggle>
-                <b-navbar-brand href="/#/">
+                <b-navbar-brand to="/">
                     <span>
                         <!-- <img src="../imgs/logo.png" alt="Logo"> -->
                        {{appTitle}}
@@ -12,7 +12,7 @@
 
                 <b-collapse is-nav id="nav_collapse">
                     <b-navbar-nav>
-                        <b-nav-item href="/#/test">Test View</b-nav-item>
+                        <router-link to="/test" class="nav-link">Test View</router-link>
                     </b-navbar-nav>
 
                     <!-- Right aligned nav items -->
@@ -39,7 +39,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { config } from "../config/config";
+import { config } from "./config";
 
 @Component({})
 export default class extends Vue {
