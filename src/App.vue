@@ -1,39 +1,37 @@
 <template>
-    <div class="everything">
-        <header class="header">
-            <b-navbar class="bg-primary" toggleable="md" fixed="top" variant="faded" type="dark">
-                <b-navbar-toggle target="nav_collapse" position="left"></b-navbar-toggle>
-                <b-navbar-brand to="/">
-                    <span>
-                        <!-- <img src="../imgs/logo.png" alt="Logo"> -->
-                       {{appTitle}}
-                    </span>
-                </b-navbar-brand>
+  <div class="everything">
+    <header class="header">
+      <b-navbar class="bg-primary" toggleable="md" fixed="top" variant="faded" type="dark">
+        <b-navbar-toggle target="nav_collapse" position="left"></b-navbar-toggle>
+        <b-navbar-brand to="/">
+          <span>
+            <!-- <img src="../imgs/logo.png" alt="Logo"> -->
+            {{appTitle}}
+          </span>
+        </b-navbar-brand>
 
-                <b-collapse is-nav id="nav_collapse">
-                    <b-navbar-nav>
-                        <router-link to="/test" class="nav-link">Test View</router-link>
-                    </b-navbar-nav>
+        <b-collapse is-nav id="nav_collapse">
+          <b-navbar-nav>
+            <b-nav-item to="/test">Test View</b-nav-item>
+          </b-navbar-nav>
 
-                    <!-- Right aligned nav items -->
-                    <b-navbar-nav class="ml-auto" right>
-
-                    </b-navbar-nav>
-                </b-collapse>
-            </b-navbar>
-        </header>
-        <div class="wrapper">
-            <section class="content">
-                <router-view></router-view>
-            </section>
-        </div>
-        <footer class="footer bg-primary">
-            <div class="container-fluid">
-                <p>Last updated: {{footer.buildDate}}</p>
-                <p>Version: {{footer.version}}</p>
-            </div>
-        </footer>
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto" right></b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </header>
+    <div class="wrapper">
+      <section class="content">
+        <router-view></router-view>
+      </section>
     </div>
+    <footer class="footer bg-primary">
+      <div class="container-fluid">
+        <p>Last updated: {{footer.buildDate}}</p>
+        <p>Version: {{footer.version}}</p>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script lang="ts">
@@ -43,11 +41,11 @@ import { config } from "./config";
 
 @Component({})
 export default class extends Vue {
-    private appTitle = config.appTitle;
-    private footer = {
-        buildDate: config.buildDate,
-        version: config.version
-    };
+  private appTitle = config.appTitle;
+  private footer = {
+    buildDate: config.buildDate,
+    version: config.version
+  };
 }
 </script>
 
@@ -85,7 +83,6 @@ body,
     }
   }
   .navbar-brand,
-  .navbar-nav .nav-link,
   .navbar-toggler {
     border: 1px solid transparent;
     span:hover,
