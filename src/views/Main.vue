@@ -4,10 +4,14 @@
     <div class="jumbotron">
       <h1>{{message}}</h1>
       <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to position content out within the larger container.</p>
+      <p>It uses utility classes for typography and spacing to position content out within the larger container.
+        <fa-icon icon="comment-dots"></fa-icon>
+      </p>
       <div class="form-inline">
         <input type="text" class="form-control" v-model="userInput" placeholder="Type something...">
-        <button class="btn btn-primary" v-on:click="openAlert(userInput)" v-bind:disabled="userInput === ''">Click me!</button>
+        <button class="btn btn-primary" v-on:click="openAlert(userInput)" v-bind:disabled="userInput === ''">Click me!
+          <fa-icon icon="check-square"></fa-icon>
+        </button>
       </div>
     </div>
   </div>

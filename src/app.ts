@@ -1,8 +1,12 @@
 // Bootstrap CSS
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "bootstrap/dist/css/bootstrap.css";
-// Bootswatch theme
-import "bootswatch/dist/yeti/bootstrap.min.css";
+
+// Configuration file
+import { config } from "./config";
+
+// Bootswatch theme (changeable in the config)
+import(`bootswatch/dist/${config.bootswatchTheme}/bootstrap.min.css`);
 
 // IE polyfills
 import "core-js/es6/array";
@@ -11,6 +15,18 @@ import "core-js/es7/array";
 
 // Main Vue library
 import Vue from "vue";
+
+// Fontawesome icon setup
+import { library } from "@fortawesome/fontawesome-svg-core";
+// Only import the icons you really use to reduce the size of the import, e.g. 'faCommentDots' (the comment dots icon) instead of 'fas' (all free solid icons)
+import {
+  faCheckSquare,
+  faCommentDots,
+  faStar
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+library.add(faCheckSquare, faCommentDots, faStar);
+Vue.component("fa-icon", FontAwesomeIcon);
 
 // BootstrapVue UI components library
 import BootstrapVue from "bootstrap-vue";
@@ -24,7 +40,9 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 import routes from "./routes";
 const router = new VueRouter({
-  mode: "history",
+  // Use history mode to get rid of the # in the URL
+  // This requires server-side changes though to have stateless URLs (see: https://router.vuejs.org/guide/essentials/history-mode.html)
+  // mode: "history",
   routes
 });
 
