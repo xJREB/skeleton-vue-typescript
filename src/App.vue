@@ -25,7 +25,7 @@
         <router-view></router-view>
       </section>
     </div>
-    <footer class="footer bg-primary">
+    <footer class="footer bg-primary text-light">
       <div class="container-fluid">
         <p>Last updated: {{footer.buildDate}}</p>
         <p>Version: {{footer.version}}</p>

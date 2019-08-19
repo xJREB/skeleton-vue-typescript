@@ -1,6 +1,6 @@
 // External
 const webpackMerge = require("webpack-merge");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 // Internal
@@ -16,5 +16,5 @@ module.exports = webpackMerge(commonConfig, {
         concatenateModules: true,
         minimize: true
     },
-    plugins: [new CleanWebpackPlugin(["target"])]
+    plugins: [new CleanWebpackPlugin()]
 });
